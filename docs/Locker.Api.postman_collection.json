@@ -1,0 +1,367 @@
+{
+	"info": {
+		"_postman_id": "9aefc04f-8e6f-44ea-aaff-d40894dfd32f",
+		"name": "Locker.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token - Get Access Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"grantType\": \"password\",\n\t\"userName\" : \"locker_test\",\n\t\"password\" : \"123DSAT!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token - Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"grantType\": \"refresh_token\",\n\t\"accessToken\" : \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxMzEsImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.nsA_k4l10LaZ23C-j5URCt3aUXmyTfVPjqXPcE8-Zng\",\n\t\"refreshToken\" : \"V9dN5dzW1Dk3hKVPDAEgbQGs1dEUcoTRJPGJOBXfcfQ=\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/auth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Create User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxODksImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.gqKLT-M8KOSqEXzX1oxpm2UGcYhMels-wGaMTXXx52o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\": \"locker_test\",\n\t\"password\": \"123DSAT!\",\n\t\"permissions\":  [{\n\t\t\"resource\": \"Users\",\n\t\t\"accessRight\": 8\n\t  }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Read User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxODksImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.gqKLT-M8KOSqEXzX1oxpm2UGcYhMels-wGaMTXXx52o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3499/api/users/5d9725233d6aa186445b6960",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"users",
+						"5d9725233d6aa186445b6960"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Add Permission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxODksImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.gqKLT-M8KOSqEXzX1oxpm2UGcYhMels-wGaMTXXx52o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"permissions\" : [\n\t\t{\n\t\t\t\"resource\" : \"BLocks\",\n\t\t\t\"accessRight\": 12\n\t\t}\n   ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/users/5d9725233d6aa186445b6960/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"users",
+						"5d9725233d6aa186445b6960",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User - Remove Permission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxODksImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.gqKLT-M8KOSqEXzX1oxpm2UGcYhMels-wGaMTXXx52o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"resources\": [\n\t\t\"BLocks\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/users/5d9725233d6aa186445b6960/permissions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"users",
+						"5d9725233d6aa186445b6960",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locks - Get All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxMzEsImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.nsA_k4l10LaZ23C-j5URCt3aUXmyTfVPjqXPcE8-Zng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3499/api/locks",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"locks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locks - Get Lock",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxMzEsImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.nsA_k4l10LaZ23C-j5URCt3aUXmyTfVPjqXPcE8-Zng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3499/api/locks/5d972457992baf0ef88bec9a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"locks",
+						"5d972457992baf0ef88bec9a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locks - Unlock",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxMzEsImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.nsA_k4l10LaZ23C-j5URCt3aUXmyTfVPjqXPcE8-Zng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"state\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3499/api/locks/5d972457992baf0ef88bec9a/locking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"locks",
+						"5d972457992baf0ef88bec9a",
+						"locking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Locks - Get Locking History",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VycyI6IkFsbCIsIkxvY2tzIjoiQWxsIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvbmFtZWlkZW50aWZpZXIiOiI1ZDk3MjQ1Nzk5MmJhZjBlZjg4YmVjOTkiLCJleHAiOjE1NzAxODgxMzEsImlzcyI6IkxvY2tlcl9Mb2NhbCIsImF1ZCI6IkxvY2tlcl9BcGkifQ.nsA_k4l10LaZ23C-j5URCt3aUXmyTfVPjqXPcE8-Zng",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3499/api/locks/5d972457992baf0ef88bec9a/locking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3499",
+					"path": [
+						"api",
+						"locks",
+						"5d972457992baf0ef88bec9a",
+						"locking"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
