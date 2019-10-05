@@ -1,4 +1,4 @@
-# Least Magic ASP.NET Core 3.0 Starter Rest Web Api Impelmentation
+# Least Magic ASP.NET Core 3.0 Starter Rest Web Api Implementation
 
 The idea behind the application is to use least general purpose libraries which an be replaced with clear, understandable and manageable few lines of code
 
