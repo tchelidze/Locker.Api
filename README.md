@@ -1,8 +1,8 @@
 # Least Magic ASP.NET Core 3.0 Starter Rest Web Api Implementation
 
-The idea behind the application is to use least general purpose libraries which an be replaced with clear, understandable and manageable few lines of code
+The idea behind the application is to use least general-purpose libraries which can be replaced with clear, understandable and manageable few lines of code
 
-Included/demostrated features
+Included/demonstrated features
 
 1. Token Based Authentication, supporting `password` grant type, implemented **manually** without back boxes such [OpenIdDict](https://www.nuget.org/packages/OpenIddict/) or [IdentityServer](https://www.nuget.org/packages/IdentityServer4/) and 1K lines of configuration
 2. Identity Management implemented **manually** without [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/) and familiar `AspNet..` tables/collections
