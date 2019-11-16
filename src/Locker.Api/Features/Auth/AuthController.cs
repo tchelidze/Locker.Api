@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Locker.Api.Features.Auth.Models;
+﻿using Locker.Api.Features.Auth.Models;
 using Locker.Api.Features.Shared;
 using Locker.Api.Web.Filters;
 using Locker.Domain.Features.Auth.Entities;
@@ -12,6 +7,13 @@ using Locker.Domain.Features.Shared.ExecutionResult;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.Extensions.Primitives;
+using Microsoft.Net.Http.Headers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Locker.Api.Features.Auth
 {
@@ -38,6 +40,7 @@ namespace Locker.Api.Features.Auth
         [AllowAnonymous, HttpPost("api/auth/token")]
         public Task<IActionResult> GetToken([BindRequired, FromBody] GetAuthTokenApiInput input)
         {
+            var a = MediaTypeHeaderValue.Parse(new StringSegment("application/json; keyId = 123", 0, "application/json; keyId = 123".Length));
             if (input.GrantType == "password")
             {
                 return GetTokenViaPasswordGrantType(input.UserName, input.Password);
