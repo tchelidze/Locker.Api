@@ -1,4 +1,4 @@
-name: Docker
+name: Run Tests
 
 on: [push]
 
@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Build the Docker image
-      run: docker build . --file Dockerfile.test --tag tchelidze/locker-test:$(date +%s)
+      run: docker build . --file Dockerfile.test --tag tchelidze/locker-test
     - name: Run the Tests
       run: docker run tchelidze/locker-test
