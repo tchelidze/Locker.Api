@@ -1,8 +1,15 @@
-# Least Ceremony ASP.NET Core 3.0 Starter Rest Web Api Implementation
+# Sweet ASP.NET Core 3.0 Web Api Implementation
 
-The idea behind the application is to use least general-purpose libraries which can be replaced with clear, understandable and manageable few lines of code
+# What is this repo all about ?
 
-Brief summary of structure/features included
+   The idea is to present starter asp.net core web api project with best (and not really best) practices implemented.
+
+# How can i play with it ?
+
+   You can run the project either via Visual Studio or via docker (cmd `docker-compose up`), then you need to import the [Postman collection](https://github.com/tchelidze/Locker.Api/blob/master/docs/Locker.Api.postman_collection.json) (`Postman` -> `File` -> `Import`)
+
+
+# Boring summary of structure/features included
 
 1. Token Based Authentication, supporting `password` and `refresh_token` grant type, implemented **manually** 
 2. Identity Management implemented **manually** without [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/) and familiar `AspNet..` tables/collections
@@ -13,6 +20,9 @@ Brief summary of structure/features included
 7. [MediatR](https://github.com/jbogard/MediatR) as mediator between API layer and the domain
 8. MongoDb as a persistance mechanism (surprisingly)
 9. [Unit Tests](https://github.com/tchelidze/Locker.Api/tree/master/test/Locker.UnitTests) for all main parts of the App 
+10. Docker support
+11. Github Action for running the test via docker
 
-Repository includes [Postman collection](https://github.com/tchelidze/Locker.Api/blob/master/docs/Locker.Api.postman_collection.json) to make api exploration easier
+# Wait a sec, why should i care ?
 
+--  ![](https://ljdchost.com/038/Q0QD9Jj.gif)
