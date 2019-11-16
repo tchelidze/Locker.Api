@@ -7,6 +7,8 @@ services:
     ports: 
       - "27018:27017"
   web:
+    environment: 
+      - MongoRepositorySettings:ConnectionString=mongodb://mongodb-server:27017/
     container_name: locker_web
     build: . 
     ports: 
