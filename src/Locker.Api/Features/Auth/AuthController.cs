@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Locker.Api.Features.Auth.Models;
+﻿using Locker.Api.Features.Auth.Models;
 using Locker.Api.Features.Shared;
 using Locker.Api.Web.Filters;
 using Locker.Domain.Features.Auth.Entities;
@@ -12,6 +7,11 @@ using Locker.Domain.Features.Shared.ExecutionResult;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Locker.Api.Features.Auth
 {
