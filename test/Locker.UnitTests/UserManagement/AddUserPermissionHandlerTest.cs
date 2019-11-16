@@ -28,7 +28,6 @@ namespace Locker.UnitTests.UserManagement
         [Test]
         public async Task WhenUserIdIsInvalidItShouldReturnError()
         {
-            Assert.Fail();
             var userId = "123";
 
             _userRepository
