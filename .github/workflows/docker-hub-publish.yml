@@ -1,6 +1,12 @@
-name: Publish Image To DockerHub
+name: Publish To DockerHub
 
-on: [push]
+on: 
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
 
 jobs: 
   build: 
