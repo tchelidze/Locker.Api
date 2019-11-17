@@ -21,7 +21,7 @@
 8. MongoDb as a persistance mechanism (surprisingly)
 9. [Unit Tests](https://github.com/tchelidze/Locker.Api/tree/master/test/Locker.UnitTests) for all main parts of the App 
 10. Docker support
-11. Github Action for running the test via docker
+11. Github Action for running the test via docker and publishing image to docker hub
 
 # Wait a sec, why should i care ?
 
