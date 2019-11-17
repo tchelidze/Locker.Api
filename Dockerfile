@@ -14,9 +14,6 @@ COPY ./Locker.sln  ./
 COPY src/*/*.csproj ./
 RUN for file in $(ls *.csproj); do mkdir -p src/${file%.*}/ && mv $file src/${file%.*}/; done
 
-# Restore package
-RUN dotnet restore
-
 # copy src and test folders into /app/src and /app/test
 COPY src/. ./src/
 
