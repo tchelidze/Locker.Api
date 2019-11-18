@@ -14,7 +14,7 @@ COPY ./Locker.sln  ./
 COPY src/*/*.csproj ./
 RUN for file in $(ls *.csproj); do mkdir -p src/${file%.*}/ && mv $file src/${file%.*}/; done
 
-# copy src and test folders into /app/src and /app/test
+# copy src folder into /app/src
 COPY src/. ./src/
 
 WORKDIR /app/src/Locker.Api
