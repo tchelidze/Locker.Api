@@ -2,7 +2,7 @@
 
 # What is this repo all about ?
 
-   The idea is to present starter asp.net core web api project with best (and not really best) practices implemented.
+   The idea is to present starter asp.net core web api project with best (and not really good) practices implemented.
 
 # How can i play with it ?
 
