@@ -24,9 +24,6 @@
 11. [Model State Validator](https://github.com/tchelidze/Locker.Api/blob/master/src/Locker.Api/Web/Filters/ValidateModelStateFilterAttribute.cs) Action Filter for crosscutting model state validation (`if(!ModelState.IsValid) { ... })` basically)
 
 
-
-11. 
-
 # Wait a sec, why should i care ?
 
 --  ![](https://ljdchost.com/038/Q0QD9Jj.gif)
