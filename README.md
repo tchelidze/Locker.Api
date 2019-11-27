@@ -11,7 +11,7 @@
 
 # Boring summary of structure/features included
 
-1. Token Based Authentication, supporting `password` and `refresh_token` grant type, implemented **manually** 
+1. Token Based Authentication, supporting `password` and `refresh_token` grant type, implemented [**manually**](https://github.com/tchelidze/Locker.Api/blob/master/src/Locker.Api/Features/Auth/AuthController.cs) 
 2. Identity Management implemented **manually** without [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/) and familiar `AspNet..` tables/collections
 3. Fine-grained Authorization implemented [manually](https://github.com/tchelidze/Locker.Api/blob/master/src/Locker.Api/Web/Filters/CrudApiFilterAttribute.cs)
 4. [Route Constraints](https://github.com/tchelidze/Locker.Api/blob/master/src/Locker.Api/Web/RouteConstraints/ObjectIdRouteConstraint.cs) for crosscutting route data validation
